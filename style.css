@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+  font-family: monospace, "exo 2";
+}
+#clock-container {
+  display: flex;
+  align-items: center;
+  background-color: black;
+  width: 100%;
+  height: 40vh;
+  justify-content: center;
+}
+
+#clock {
+  font-size: 5.4rem;
+  color: #17d4fe;
+}
+slider {
+  padding: 50px 20px;
+  background-color: cornflowerblue;
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  overflow: hidden;
+  height: 400px;
+  position: relative;
+  position: relative;
+}
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.5);
+}
+.slide.active img {
+  filter: brightness(0.8);
+}
+.slide {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 100%;
+  transition: width 0.5s;
+  /* height: 0; */
+  z-index: -1;
+}
+
+.slide.active {
+  width: 100%;
+  z-index: 0;
+}
+.slide div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(135, 206, 250, 0.7);
+  border-radius: 12px;
+  text-align: center;
+  max-width: 70%;
+  height: 0;
+  width: 0;
+  opacity: 0;
+  color: transparent;
+  transition: all 0.7s;
+}
+.slide.active div {
+  display: block;
+  color: black;
+  width: auto;
+  height: auto;
+  opacity: 1;
+  padding: 20px;
+}
+.slides-wrapper:hover .slide div {
+  background-color: rgba(135, 206, 250, 0.9);
+}
+.slide h3 {
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.slider-btns .btn {
+  position: absolute;
+  top: 50%;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  color: white;
+  font-weight: bold;
+  margin: 0;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 139, 138, 0.7);
+}
+.slides-wrapper:hover .slider-btns .btn {
+  background-color: rgba(0, 139, 139, 1);
+}
+.slides-wrapper {
+  position: relative;
+}
+.next {
+  rotate: 45deg;
+  right: 30px;
+}
+.prev {
+  left: 30px;
+  rotate: -45deg;
+}
+
+.click-container {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.click-container i {
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+}
+.click-container i:hover {
+  background-color: skyblue;
+  border-radius: 100%;
+}
+
+.click-container div {
+  height: 25px;
+  width: 25px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+}
